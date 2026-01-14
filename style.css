@@ -1031,7 +1031,6 @@ body::before {
     transition: fill 0.3s;
 }
 
-/* Badge "1" cho Repeat One – đặt góc dưới phải (giống Spotify/YouTube Music) */
 .repeat-one-badge {
     position: absolute;
     bottom: 7px;
@@ -1050,7 +1049,7 @@ body::before {
     pointer-events: none;
     transition: opacity 0.3s ease;
     box-shadow: 0 2px 8px rgba(139, 92, 246, 0.7);
-    border: 2px solid #0a0e27; /* Nền tối để nổi bật hơn */
+    border: 2px solid #0a0e27;
 }
 
 .repeat-btn.one .repeat-one-badge {
