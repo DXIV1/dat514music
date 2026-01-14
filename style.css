@@ -966,40 +966,12 @@ body::before {
     }
 }
 
-body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: #0a0e27;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 20px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding-top: 30px;
-}
-
 .wrapper {
     width: 100%;
     max-width: 1000px;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.player-container {
-    background: rgba(15, 23, 42, 0.85);
-    backdrop-filter: blur(40px);
-    border-radius: 32px;
-    width: 100%;
-    overflow: hidden;
-    box-shadow: 
-        0 40px 120px rgba(0, 0, 0, 0.7),
-        0 0 0 1px rgba(255, 255, 255, 0.05),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    position: relative;
-    z-index: 1;
-    transition: transform 0.3s ease;
 }
 
 .copyright {

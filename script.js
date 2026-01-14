@@ -58,6 +58,7 @@ function renderPlaylist() {
             <div class="playlist-number">${(index + 1).toString().padStart(2, '0')}</div>
             <div class="playlist-info">
                 <div class="playlist-title">${song.name}</div>
+                <div class="playlist-meta" style="font-size: 13px; color: rgba(255, 255, 255, 0.4); margin-top: 4px;">${timeAgo(song.date)}</div>
             </div>
             <div class="playlist-actions">
                 <button class="download-btn" data-index="${index}">
@@ -212,6 +213,39 @@ function formatTime(seconds) {
     const mins = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
     return `${mins}:${secs.toString().padStart(2, '0')}`;
+}
+
+function timeAgo(dateString) {
+    if (!dateString) return '';
+    const date = new Date(dateString);
+    const now = new Date();
+    const seconds = Math.floor((now - date) / 1000);
+
+    let interval = Math.floor(seconds / 31536000);
+    if (interval >= 1) {
+        return interval === 1 ? "1 year ago" : interval + " years ago";
+    }
+    interval = Math.floor(seconds / 2592000);
+    if (interval >= 1) {
+        return interval === 1 ? "1 month ago" : interval + " months ago";
+    }
+    interval = Math.floor(seconds / 604800);
+    if (interval >= 1) {
+        return interval === 1 ? "1 week ago" : interval + " weeks ago";
+    }
+    interval = Math.floor(seconds / 86400);
+    if (interval >= 1) {
+        return interval === 1 ? "1 day ago" : interval + " days ago";
+    }
+    interval = Math.floor(seconds / 3600);
+    if (interval >= 1) {
+        return interval === 1 ? "1 hour ago" : interval + " hours ago";
+    }
+    interval = Math.floor(seconds / 60);
+    if (interval >= 1) {
+        return interval === 1 ? "1 minute ago" : interval + " minutes ago";
+    }
+    return Math.floor(seconds) <= 1 ? "1 second ago" : Math.floor(seconds) + " seconds ago";
 }
 
 function updateProgress() {
