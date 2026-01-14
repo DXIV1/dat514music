@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="player-container">
+            <div class="player-layout">
+                <div class="left-panel">
+                    <div class="vinyl-container">
+                        <div class="vinyl" id="vinyl">
+                            <div class="grooves">
+                                <div class="groove" style="width: 90%; height: 90%;"></div>
+                                <div class="groove" style="width: 80%; height: 80%;"></div>
+                                <div class="groove" style="width: 70%; height: 70%;"></div>
+                                <div class="groove" style="width: 60%; height: 60%;"></div>
+                                <div class="groove" style="width: 50%; height: 50%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="now-playing" style="margin-top: 24px;">
+                        <div class="track-name" id="trackName">Loading...</div>
+                        <div class="track-artist" id="trackArtist">Please wait</div>
+                    </div>
+                </div>
+
+                <div class="right-panel">
+                    <div class="player-header">
+                        <div class="player-title">
+                            <span class="music-emoji">🎵</span>
+                            <span>Music Player</span>
+                        </div>
+                        <div class="player-subtitle"></div>
+                    </div>
+
+                    <div class="controls-section">
+                        <div class="progress-container">
+                            <div class="progress-bar" id="progressBar">
+                                <div class="progress" id="progress"></div>
+                            </div>
+                            <div class="time-info">
+                                <span id="currentTime">0:00</span>
+                                <span id="duration">0:00</span>
+                            </div>
+                        </div>
+
+                        <div class="main-controls">
+                            <button class="control-btn shuffle-btn" id="shuffleBtn" title="Shuffle">
+                                <svg viewBox="0 0 24 24" class="shuffle-svg" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 7h6l8 8h4M21 7l-3-3 3 3-3 3M3 17h6l3-3M21 17l-3-3 3 3-3 3"
+                                        fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                                </svg>
+
+                            </button>
+                            <button class="control-btn" id="prevBtn" title="Previous">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
+                                </svg>
+                            </button>
+                            <button class="control-btn play-btn" id="playBtn" title="Play/Pause">
+                                <svg viewBox="0 0 24 24" id="playIcon">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </button>
+                            <button class="control-btn" id="nextBtn" title="Next">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
+                                </svg>
+                            </button>
+                            <button class="control-btn repeat-btn" id="repeatBtn" title="Repeat">
+                                <svg viewBox="0 0 24 24" class="repeat-svg">
+                                    <path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z"/>
+                                </svg>
+                                <span class="repeat-one-badge">1</span>
+                            </button>
+                        </div>
+
+                        <div class="volume-control">
+                            <button class="volume-btn" id="muteBtn">
+                                <svg class="volume-icon" viewBox="0 0 24 24" id="volumeIcon">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+                                </svg>
+                            </button>
+                            <div class="volume-slider" id="volumeSlider">
+                                <div class="volume-level" id="volumeLevel"></div>
+                            </div>
+                            <span class="volume-percentage" id="volumePercentage">70%</span>
+                        </div>
+                    </div>
+
+                    <div class="playlist-section">
+                        <div class="playlist-header">
+                            <span>Playlist</span>
+                            <span class="track-count" id="trackCount">0 tracks</span>
+                        </div>
+                        <div class="playlist" id="playlist">
+                            <div class="loading">
+                                <div class="spinner"></div>
+                                <p>Đang tải danh sách nhạc...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="copyright">
+            © <span id="copyrightYear"></span> Dat514. All rights reserved.
+        </footer>
+    </div>
+
+    <audio id="audio" crossorigin="anonymous"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
