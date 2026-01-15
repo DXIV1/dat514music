@@ -615,27 +615,22 @@ body::before {
 }
 
 @media (max-width: 768px) {
-    body {
-        padding: 15px;
-        padding-top: 20px;
-        align-items: flex-start;
-        overflow-y: auto;
-    }
-
     .player-container {
-        border-radius: 20px;
-        max-width: 100%;
-        height: auto;
-        display: flex;
-        flex-direction: column;
+        max-height: none !important;
+        height: fit-content !important;
+        min-height: auto;
     }
 
     .player-layout {
-        grid-template-columns: 1fr;
+        max-height: none !important;
+        height: auto !important;
         min-height: auto;
-        height: auto;
-        display: flex;
-        flex-direction: column;
+        overflow: visible; 
+    }
+
+    body {
+        align-items: flex-start;
+        padding-top: 20px;
     }
     
     .left-panel {
@@ -799,6 +794,7 @@ body::before {
         flex-direction: column;
         min-height: auto;
         height: auto;
+        
     }
 
     .left-panel {
