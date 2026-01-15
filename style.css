@@ -63,7 +63,8 @@ body::before {
     grid-template-columns: 420px 1fr;
     min-height: 650px;
     max-height: 90vh;
-    overflow: hidden;
+        overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .left-panel {
