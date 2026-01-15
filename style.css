@@ -429,6 +429,7 @@ body::before {
     font-weight: 600;
     min-width: 40px;
     text-align: right;
+    overflow-y: auto;
 }
 
 .playlist-section {
